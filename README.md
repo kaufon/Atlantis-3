@@ -12,7 +12,7 @@ Antes de começar, certifique-se de que você tem o seguinte instalado em sua m�
 Abra o seu prompt de comando (cmd) ou PowerShell e execute o seguinte comando para clonar o repositório:
 
 ```bash
-git clone  https://github.com/kaufon/Atlantis-2.git
+git clone  https://github.com/kaufon/Atlantis-3.git
 ```
 
 ### Passo 2: Navegar até o Diretório do Projeto
@@ -20,7 +20,7 @@ git clone  https://github.com/kaufon/Atlantis-2.git
 Mude para o diretório do projeto:
 
 ```bash
-cd Atlantis-2/
+cd Atlantis-3/
 ```
 
 ### Passo 3: Instalar Dependências
@@ -35,4 +35,3 @@ npm install
 ```bash
 npm run dev
 ```
-# Atlantis-3
