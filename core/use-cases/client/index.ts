@@ -1,0 +1,6 @@
+export {CreateClientUseCase} from "./CreateClientUseCase"
+export {RemoveDependentFromGuardianUseCase} from "./RemoveDependentFromGuardianUseCase"
+export {AddDependentToGuardianUseCase} from "./AddDependentToGuardianUseCase"
+export {UpdateClientUseCase} from "./UpdateClientUseCase"
+export {DeleteClientUseCase } from "./DeleteClientUseCase"
+export {ListAllClientsUseCase} from "./ListAllClientsUseCase"
