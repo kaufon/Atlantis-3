@@ -11,6 +11,11 @@ export class ListGuardianFromSpecificDependent {
     this.output = output;
   }
   public async execute(): Promise<void> {
+    if (this.clients.length <= 0) {
+      console.log("Nenhum cliente encontrado")
+      return
+      
+    }
     const dependentId = await this.input.textInput("Digite o id do dependente:");
     const dependent = this.clients.find((client) => client.id === dependentId);
     if (!dependent) {

@@ -40,9 +40,6 @@ export class UpdateClientUseCase {
     );
     clientToBeEdited.registrationDate = parseDate(registrationDate);
 
-    const street = await this.input.textInput(
-      "Insira o nome da rua de moradia:",
-    );
     clientToBeEdited.address = await this.getAddress();
 
     let updatedCellphones = clientToBeEdited.cellphones;
@@ -110,7 +107,15 @@ export class UpdateClientUseCase {
     const city = await this.input.textInput("Insira a cidade:");
     const state = await this.input.textInput("Insira o estado:");
     const postalCode = await this.input.textInput("Insira o CEP:");
+    const country = await this.input.textInput("Insira o pais:");
 
-    return new Address({ street, neighborhood, city, state, postalCode });
+    return new Address({
+      street,
+      neighborhood,
+      city,
+      state,
+      country,
+      postalCode,
+    });
   }
 }

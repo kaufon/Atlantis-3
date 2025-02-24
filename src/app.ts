@@ -32,12 +32,14 @@ export class App {
     console.log("Bem vindo a Atlantis!");
     let isRunning = true;
     while (isRunning) {
-      switch (await this.input.selectInput("Por favor selecione", [
+      switch (
+      await this.input.selectInput("Por favor selecione", [
         ["Clientes", "client"],
-        ["Listagem", "lists"],
         ["Acomodacoes", "accommodations"],
+        ["Listagem", "lists"],
         ["Sair", "leave"],
-      ])) {
+      ])
+      ) {
         case "client":
           await this.clientHandler();
           break;
@@ -59,7 +61,8 @@ export class App {
     }
   }
   public async clientHandler(): Promise<void> {
-    switch (await this.input.selectInput("Por favor selecione", [
+    switch (
+    await this.input.selectInput("Por favor selecione", [
       ["Cadastrar clientes", "register"],
       ["Listar clientes", "list"],
       ["Editar clientes", "edit"],
@@ -67,7 +70,8 @@ export class App {
       ["Adicionar dependente a responsavel", "add-dependent"],
       ["Remover dependente de responsavel", "remove-dependent"],
       ["Voltar", "back"],
-    ])) {
+    ])
+    ) {
       case "register": {
         const useCase = new CreateClientUseCase(this.clients, this.input);
         return useCase.execute();
@@ -107,11 +111,13 @@ export class App {
     }
   }
   public async listHandler(): Promise<void> {
-    switch (await this.input.selectInput("Por favor selecione", [
+    switch (
+    await this.input.selectInput("Por favor selecione", [
       ["Listar dependentes de um guardiao", "list-dependents"],
       ["Listar responsavel para dependente especifico", "list-guardian"],
       ["Voltar", "back"],
-    ])) {
+    ])
+    ) {
       case "list-dependents": {
         const useCase = new ListDependentsFromSpecificGuardian(
           this.clients,
@@ -137,12 +143,14 @@ export class App {
     }
   }
   public async accommodationsHandler(): Promise<void> {
-    switch (await this.input.selectInput("Por favor selecione", [
+    switch (
+    await this.input.selectInput("Por favor selecione", [
       ["Adicionar hospede", "create"],
       ["Remover hospede", "remove"],
       ["Listar acomodacoes", "list"],
       ["Voltar", "back"],
-    ])) {
+    ])
+    ) {
       case "create": {
         const useCase = new RentAccomodationUseCase(
           this.input,
@@ -156,7 +164,7 @@ export class App {
           this.input,
           this.accommodations,
         );
-        return;
+        return useCase.execute();
       }
       case "list": {
         const useCase = new ListAllAccommodationsUseCase(

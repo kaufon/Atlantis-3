@@ -12,7 +12,7 @@ export class ListAllAccommodationsUseCase {
   public async execute(): Promise<void> {
     const accommodations = this.accommodations;
     if (accommodations.length <= 0) {
-      console.log("Nenhuma acomodacao sendo usado no moment");
+      console.log("Nenhuma acomodacao sendo usado no momento");
       return;
     }
     this.output.table(
@@ -25,7 +25,7 @@ export class ListAllAccommodationsUseCase {
               accommodation.accommodationName,
           ) || accommodation.accommodationName,
         Descricao: accommodation.accommodationName,
-        "Usuario responsavel": `${accommodation.responsibleUser.name} | ${accommodation.responsibleUser.socialName}`,
+        "Usuario responsavel": `${accommodation.responsibleUser.name} ${accommodation.responsibleUser.socialName}`,
       })),
     );
   }

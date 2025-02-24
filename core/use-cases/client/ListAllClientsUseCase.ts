@@ -1,3 +1,4 @@
+
 import type { Client } from "../../domain";
 import type { IInput, IOutput } from "../../interfaces";
 
@@ -19,7 +20,7 @@ export class ListAllClientsUseCase {
       "Nome Social": client.socialName,
       "Data de nascimento": `${client.birthDate.getDate()}/${client.birthDate.getMonth() + 1}/${client.birthDate.getFullYear()}`,
       "Data de registro": `${client.registrationDate.getDate()}/${client.registrationDate.getMonth() + 1}/${client.registrationDate.getFullYear()}`,
-      Endereco: `${client.address.street}, ${client.address.neighborhood}, ${client.address.city}, ${client.address.state}, ${client.address.postalCode}`,
+      Endereco: `${client.address.street}, ${client.address.neighborhood}, ${client.address.city}, ${client.address.state}, ${client.address.postalCode}, ${client.address.country}`,
       Celulares: client.cellphones.map(
         (cellphone) => `${cellphone.ddd}-${cellphone.number}`,
       ),

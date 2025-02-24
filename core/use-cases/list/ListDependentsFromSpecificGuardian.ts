@@ -11,7 +11,14 @@ export class ListDependentsFromSpecificGuardian {
     this.output = output;
   }
   public async execute(): Promise<void> {
-    const guardianId = await this.input.textInput("Digite o id do responsavel:");
+    if (this.clients.length <= 0) {
+      console.log("Nenhum cliente encontrado");
+      return;
+    }
+
+    const guardianId = await this.input.textInput(
+      "Digite o id do responsavel:",
+    );
     const guardian = this.clients.find((client) => client.id === guardianId);
     if (!guardian) {
       console.log("Cliente nao encotrando,tente novamente");

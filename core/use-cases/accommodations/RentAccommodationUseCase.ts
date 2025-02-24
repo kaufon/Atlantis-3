@@ -21,6 +21,11 @@ export class RentAccomodationUseCase {
     this.accommodations = accommodations;
   }
   public async execute(): Promise<void> {
+    if (this.clients.length <= 0) {
+      console.log("Nenhum cliente encontrado");
+      return;
+    }
+
     const clientId = await this.input.textInput(
       "Insira o id do cliente que ira alugar a acomodacao",
     );
